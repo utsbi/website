@@ -1,18 +1,70 @@
 ---
-import { Image } from "astro:assets";
-import favicon from "@/assets/favicons/favicon-cropped.png";
-// import Image from "astro/components/Image.astro";
+import logo from "@/assets/logos/logo.png";
+import Image from "astro/components/Image.astro";
+
+const navItems = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about/" },
+  { name: "Outreach", href: "/outreach/" },
+  { name: "Projects", href: "/projects/" },
+  { name: "Contact Us", href: "/contact/" },
+];
 ---
 
-<nav class="navbar pl-10 pr-10">
-  <div class="navbar-menu flex justify-center content-center">
-    <div class="navbar-start flex space-x-4">
-      <a href="/" class="navbar-item">
-        <Image src={favicon} width="50" height="50" alt="logo" /></a
+<nav class="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200">
+  <div
+    class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+  >
+    <a
+      href="https://utsbi.org/"
+      class="flex items-center space-x-3 rtl:space-x-reverse"
+    >
+      <Image src={logo} loading={"eager"} class="h-12 w-12" alt="SBI Logo" />
+      <!-- <span class="self-center text-2xl whitespace-nowrap font-OldStandardTT"
+        >Sustainble Building Initiative</span
+      > -->
+    </a>
+    <button
+      data-collapse-toggle="navbar-sticky"
+      type="button"
+      class="inline-flex items-center p-4 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+      aria-controls="navbar-sticky"
+      aria-expanded="false"
+    >
+      <span class="sr-only">Open main menu</span>
+      <svg
+        class="w-5 h-5"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 17 14"
       >
-      <a href="/" class="navbar-item">Home</a>
-      <a href="/about" class="navbar-item">About</a>
-      <a href="/contact" class="navbar-item">Contact</a>
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 1h15M1 7h15M1 13h15"></path>
+      </svg>
+    </button>
+    <div class="items-end justify-between hidden w-full md:flex md:w-auto">
+      <ul
+        class="flex flex-col p-4 md:p-0 mt-4 font-OldStandardTT border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white"
+      >
+        {
+          navItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class={`block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0
+                  md:text-black text-xl`}
+              >
+                {item.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </div>
 </nav>

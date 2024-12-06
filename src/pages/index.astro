@@ -1,15 +1,78 @@
 ---
+import "@/styles/globals.css";
+import Image from "astro/components/Image.astro";
 import Layout from "../layouts/Layout.astro";
+import background from "@/assets/images/background.png";
 ---
 
 <Layout title="Home">
-  <body class="">
-    <h1 class="text-5xl">Sustainable Building Initiative</h1>
-  </body>
+  <section>
+    <div class="background-container">
+      <div class="overlay-text text-left">
+        <div class="text-7xl">
+          <span class="text-green-500">S</span>ustainable
+        </div>
+        <div class="text-7xl">
+          <span class="text-green-500">B</span>uilding
+        </div>
+        <div class="text-7xl">
+          <span class="text-green-500">I</span>nitiative
+        </div>
+        <div class="">
+          Research-Driven, Professionally Inspired, and Student-Powered
+        </div>
+        <!-- <div>
+          <button
+            class="text-green-500 text-2xl border-spacing-4 border-2 rounded-lg"
+            >Join Us</button
+          >
+          <button>What We're About</button>
+        </div> -->
+      </div>
+      <Image
+        src={background}
+        loading={"eager"}
+        alt="Background"
+        class="background-image"
+      />
+    </div>
+  </section>
+  <section class="px-72 py-3">
+    <div class="font-OldStandardTT">
+      <div class="text-3xl">Our Mission Statement</div>
+      <div class="pt-2">
+        “We aim to spread the idea of sustainable infrastructure and team
+        collaboration into the upcoming generations to all types of schools — no
+        matter their financial status. We host workshops and events to get
+        students together to create a future where all types of engineers will
+        have to solve everyday problems in a sustainable way.”
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <style>
-  h1 {
-    font-family: OldStandardTT;
+  @import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400&display=swap");
+
+  .background-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: "Old Standard TT", serif;
+    z-index: 1;
+    text-align: left;
+  }
+
+  .background-image {
+    display: block;
+    height: 80vh;
+    object-fit: cover;
   }
 </style>
