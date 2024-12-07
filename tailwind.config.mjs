@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        OldStandardTT: ['"OldStandardTT"', "serif"],
+        OldStandardTT: ["'Old Standard TT'", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
