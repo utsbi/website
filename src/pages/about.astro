@@ -1,9 +1,133 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+import ProfileCard from "@/components/ProfileCard.astro";
+
+import Rice from "@/assets/images/schools/rice_university.png";
+import UTAustin from "@/assets/images/schools/TEXAS_official_seal.svg";
+import ICOL from "@/assets/images/schools/imperial_college_of_london.png";
+
+import banana from "@/assets/images/banana.webp";
+
+const images = [
+  { img: Rice, href: "https://www.rice.edu/" },
+  { img: UTAustin, href: "https://utexas.edu" },
+  { img: ICOL, href: "https://www.imperial.ac.uk/" },
+];
 ---
 
 <Layout title="About">
-  <body>
-    <h1>About Section</h1>
-  </body>
+  <section
+    class="px-6 py-10 pt-36 md:px-32 2xl:px-80 relative font-OldStandardTT"
+  >
+    <div>
+      <div class="text-4xl">About Us</div>
+      <div class="text-xl pt-10 space-y-6">
+        <div>
+          The <span class="font-semibold">Sustainable Building Initiative</span>
+          (SBI) is a worldwide organization founded by a couple of passionate students
+          at the University of Texas at Austin who wish to create accessible, sustainable
+          housing solutions for all.
+        </div>
+        <div>
+          As a student organization, SBI aims to <span class="font-semibold"
+            >drive innovation in eco-friendly housing and empower future leaders</span
+          >
+          in engineering, computer science, and business. Our mission is to develop
+          sustainable and affordable housing models that serve communities while
+          providing hands-on learning opportunities that bridge technical, environmental,
+          and economic aspects of sustainable development.
+        </div>
+        <div>
+          Our <span class="font-semibold">vision and goals</span> for SBI in the
+          short term are to provide hands-on learning experiences through workshops,
+          prototype development, and collaborations with local communities. Long
+          term, our goal is to advance sustainable housing projects, develop cutting-edge
+          research, and advocate for green building practices that serve society
+          and the community.
+        </div>
+        <div>
+          Become a part of our <span class="font-semibold">wide network</span> stretching
+          from The University of Texas at Austin, Texas A&M, Imperial College of
+          London, and Rice University to gain invaluable skills and be part of a
+          mission-driven team that wishes to help shape a more sustainable future
+          in housing.
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="px-6 py-10 md:px-48 2xl:px-80 relative">
+    <div class="flex flex-col md:flex-row justify-between">
+      {
+        images.map((item) => (
+          <a href={item.href}>
+            <Image src={item.img} alt={item.href} class="w-80" />
+          </a>
+        ))
+      }
+    </div>
+  </section>
+  <section class="px-6 py-10 md:px-32 2xl:px-80 relative font-OldStandardTT">
+    <div class="text-4xl">Meet Our Team</div>
+    <div class="flex flex-col">
+      <div class="flex flex-row justify-between">
+        <ProfileCard
+          image={banana}
+          name="Banana"
+          email="banana@banana.com"
+          role="Banana"
+        />
+        <ProfileCard
+          image={banana}
+          name="Banana"
+          email="banana@banana.com"
+          role="Banana"
+        />
+        <ProfileCard
+          image={banana}
+          name="Banana"
+          email="banana@banana.com"
+          role="Banana"
+        />
+        <ProfileCard
+          image={banana}
+          name="Banana"
+          email="banana@banana.com"
+          role="Banana"
+        />
+      </div>
+      <div>
+        <ProfileCard
+          image={banana}
+          name="Banana"
+          email="banana@banana.com"
+          role="Banana"
+        />
+      </div>
+      <div>
+        <ProfileCard
+          image={banana}
+          name="Banana"
+          email="banana@banana.com"
+          role="Banana"
+        />
+      </div>
+      <div>
+        <ProfileCard
+          image={banana}
+          name="Banana"
+          email="banana@banana.com"
+          role="Banana"
+        />
+      </div>
+      <div>
+        <ProfileCard
+          image={banana}
+          name="Banana"
+          email="banana@banana.com"
+          role="Banana"
+        />
+      </div>
+    </div>
+  </section>
 </Layout>

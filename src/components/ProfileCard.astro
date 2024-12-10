@@ -1,0 +1,33 @@
+---
+import Image from "astro/components/Image.astro";
+
+interface Props {
+  image: ImageMetadata;
+  name: string;
+  role: string;
+  email: string;
+}
+
+const { image, name, role, email } = Astro.props;
+---
+
+<div class="overflow-hidden bg-white">
+  <div class="aspect-[3/4] relative">
+    <Image
+      src={image}
+      alt={`Profile photo of ${name}`}
+      class="object-cover w-44 h-full"
+    />
+  </div>
+  <div class="p-4 text-center">
+    <h3 class="font-semibold text-lg">{name}</h3>
+    <p class="text-muted-foreground text-sm mb-3">{role}</p>
+    <a
+      href={`mailto:${email}`}
+      class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-amber-100 hover:bg-amber-200 transition-colors"
+    >
+      <!-- <Mail class="w-4 h-4 text-amber-600" /> -->
+      <span class="sr-only">Email {name}</span>
+    </a>
+  </div>
+</div>
