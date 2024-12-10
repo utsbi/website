@@ -6,6 +6,7 @@ export default {
     extend: {
       fontFamily: {
         OldStandardTT: ["'Old Standard TT'", "serif"],
+        RobotoFlex: ["'Roboto Flex'", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

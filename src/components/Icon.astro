@@ -1,0 +1,19 @@
+---
+import feather from "feather-icons";
+
+export interface Props {
+  name: string;
+  size?: number;
+  strokeWidth?: number;
+  class?: string;
+}
+
+const { name, size = 24, strokeWidth = 2, class: className = "" } = Astro.props;
+
+const icon = feather.icons[name];
+const svg = icon
+  ? icon.toSvg({ width: size, height: size, "stroke-width": strokeWidth })
+  : "";
+---
+
+<span class={className} set:html={svg} />

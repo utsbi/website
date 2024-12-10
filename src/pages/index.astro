@@ -4,6 +4,9 @@ import Image from "astro/components/Image.astro";
 import Layout from "../layouts/Layout.astro";
 import background from "@/assets/images/background.png";
 import group from "@/assets/images/group.jpg";
+
+const google_forms =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfydaV7PUR4yvqQoVT73bbDsSJ1vzKCVlslrE6UGVi3yEKIVA/viewform";
 ---
 
 <Layout title="Home">
@@ -11,24 +14,22 @@ import group from "@/assets/images/group.jpg";
   <section>
     <div class="relative inline-block">
       <div
-        class="overlay-text absolute text-white text-left font-OldStandardTT -translate-x-1/2 -translate-y-1/2 animate-title"
+        class="absolute text-white font-OldStandardTT top-1/2 left-1/2 sm:left-[40%] -translate-x-1/2 -translate-y-1/2 animate-title"
       >
-        <div class="text-7xl">
+        <div class="text-6xl sm:text-7xl">
           <span class="text-green-500">S</span>ustainable
         </div>
-        <div class="text-7xl">
+        <div class="text-6xl sm:text-7xl">
           <span class="text-green-500">B</span>uilding
         </div>
-        <div class="text-7xl">
+        <div class="text-6xl sm:text-7xl">
           <span class="text-green-500">I</span>nitiative
         </div>
-        <div class="pl-1 text-lg">
+        <div class="pl-1 text-base sm:text-lg">
           Research-Driven, Professionally Inspired, and Student-Powered
         </div>
-        <div class="pl-1 pt-6">
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfydaV7PUR4yvqQoVT73bbDsSJ1vzKCVlslrE6UGVi3yEKIVA/viewform"
-          >
+        <div class="pl-1 pt-6 flex flex-col sm:flex-row sm:space-x-4">
+          <a href={google_forms} class="mb-3 sm:mb-0">
             <button
               class="bg-green-500 hover:bg-transparent text-white-700 hover:text-white transition duration-300 pt-3 pb-2 px-6 border border-green-500 hover:border-green-500 rounded"
             >
@@ -53,9 +54,9 @@ import group from "@/assets/images/group.jpg";
     </div>
   </section>
   <!-- Mission Statement -->
-  <section class="px-96 pt-10">
-    <div class="font-OldStandardTT">
-      <div class="text-3xl">Our Mission Statement</div>
+  <section class="px-6 py-10 md:px-32 2xl:px-80 relative font-OldStandardTT">
+    <div class="text-left">
+      <div class="text-2xl sm:text-3xl">Our Mission Statement</div>
       <div class="pt-2 italic">
         “We aim to spread the idea of sustainable infrastructure and team
         collaboration into the upcoming generations to all types of schools — no
@@ -64,26 +65,86 @@ import group from "@/assets/images/group.jpg";
         have to solve everyday problems in a sustainable way.”
       </div>
     </div>
-    <hr class="h-px my-8 bg-gray-200 border-0" />
+    <hr class="h-px mt-20 bg-gray-200 border-0" />
+  </section>
+  <!-- Strategy -->
+  <section class="px-6 py-10 md:px-32 2xl:px-80 relative font-OldStandardTT">
+    <div class="text-2xl sm:text-3xl pb-2">Our Strategy</div>
+    <div
+      class="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 md:space-x-8"
+    >
+      <div class="flex-1 mb-3 sm:mb-0">
+        <div class="text-xl">Identify the Problem</div>
+        <div>
+          We assess current infrastructure issues to uncover areas where
+          sustainable solutions can make the greatest impact.
+        </div>
+      </div>
+      <div class="flex-1 mb-3 sm:mb-0">
+        <div class="text-xl">Construct a Plan</div>
+        <div>
+          We design practical, sustainable solutions that align with specific
+          project needs.
+        </div>
+      </div>
+      <div class="flex-1 mb-3 sm:mb-0">
+        <div class="text-xl">Execute the Solution</div>
+        <div>
+          We take an open minded approach to carry out the project — regardless
+          of what issues may arise.
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Statistics -->
+  <section class="px-6 py-10 md:px-32 2xl:px-80 relative font-OldStandardTT">
+    <div class="text-2xl sm:text-3xl pb-2">Our Stats</div>
+    <div
+      class="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 md:space-x-8"
+    >
+      <div class="flex-1 mb-3 sm:mb-0">
+        <div class="text-xl">
+          80<span class="text-sm">+</span> Students Impacteds
+        </div>
+        <div>
+          Empowering students with hands-on experience in sustainable
+          innovation.
+        </div>
+      </div>
+      <div class="flex-1 mb-3 sm:mb-0">
+        <div class="text-xl">
+          300<span class="text-sm">+</span> Hours Volunteered
+        </div>
+        <div>We formulate design plans that meets given parameters.</div>
+      </div>
+      <div class="flex-1 mb-3 sm:mb-0">
+        <div class="text-xl">
+          20<span class="text-sm">+</span> Student Members
+        </div>
+        <div>
+          We bring together students from all majors to tackle challenges and
+          turn ideas into sustainable solutions.
+        </div>
+      </div>
+    </div>
+    <hr class="h-px mt-20 bg-gray-200 border-0" />
   </section>
   <!-- Call to action -->
-  <section class="px-96 py-5 relative">
+  <section class="px-6 py-10 md:px-32 2xl:px-80 relative">
     <div class="flex justify-center items-center">
       <div
-        class="absolute inset-0 flex flex-col justify-center items-center text-white font-OldStandardTT z-10"
+        class="absolute inset-0 flex flex-col justify-center items-center text-white font-OldStandardTT z-10 text-center"
       >
-        <div class="text-4xl pb-3">Join Our Team</div>
-        <div class="text-xl text-center px-4">
+        <div class="text-2xl sm:text-4xl py-3">Join Our Team</div>
+        <div class="text-base sm:text-xl text-center px-4">
           Your Journey to Sustainable Impact Begins Here - <span class="italic"
             >Learn, Build, Lead</span
-          >.
+          >
         </div>
         <div class="pt-8">
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfydaV7PUR4yvqQoVT73bbDsSJ1vzKCVlslrE6UGVi3yEKIVA/viewform"
-          >
+          <a href={google_forms}>
             <button
-              class="bg-green-500 hover:bg-transparent text-white-700 hover:text-white transition duration-300 text-xl pt-4 pb-3 px-6 border border-green-500 hover:border-green-500 rounded"
+              class="bg-green-500 hover:bg-transparent text-white-700 hover:text-white transition duration-300 text-base sm:text-xl pt-4 pb-3 px-6 border border-green-500 hover:border-green-500 rounded"
             >
               Apply Now
             </button>
@@ -94,18 +155,13 @@ import group from "@/assets/images/group.jpg";
         src={group}
         loading={"lazy"}
         alt="Professional group"
-        class="rounded-xl object-cover brightness-50"
+        class="rounded-xl object-cover brightness-50 h-96"
       />
     </div>
   </section>
 </Layout>
 
 <style>
-  .overlay-text {
-    top: 50%;
-    left: 40%;
-  }
-
   .animate-title > div {
     opacity: 0;
     animation: fadeInUp 2s ease forwards;
