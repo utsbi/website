@@ -5,6 +5,7 @@ import Footer from "@/components/Footer.astro";
 import favicon from "@/assets/logos/logo-transparent.png";
 
 import { ClientRouter } from "astro:transitions";
+import NavbarTest from "@/components/NavbarTest.astro";
 
 interface Props {
   title: string;
@@ -28,7 +29,8 @@ const { title } = Astro.props;
     <ClientRouter />
   </head>
   <body class="scrollbar">
-    <Navbar />
+    <!-- <Navbar /> -->
+    <NavbarTest />
     <slot />
     <Footer />
   </body>

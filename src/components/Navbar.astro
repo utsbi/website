@@ -12,7 +12,10 @@ const navItems = [
 ];
 ---
 
-<nav class="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200">
+<nav
+  x-data="{ open: false }"
+  class="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200"
+>
   <div
     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3"
   >
@@ -24,16 +27,20 @@ const navItems = [
         alt="SBI Logo"
       />
     </a>
+
     <button
-      data-collapse-toggle="navbar-sticky"
+      @click="open = !open"
       type="button"
-      class="inline-flex items-center p-4 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+      class="inline-flex items-center p-4 w-12 h-12 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
       aria-controls="navbar-sticky"
       aria-expanded="false"
     >
       <span class="sr-only">Open main menu</span>
+
+      <!-- Hamburger Icon -->
       <svg
-        class="w-5 h-5"
+        x-show="!open"
+        class="w-5 h-5 transition-all duration-300"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -46,7 +53,56 @@ const navItems = [
           stroke-width="2"
           d="M1 1h15M1 7h15M1 13h15"></path>
       </svg>
+
+      <!-- X Icon -->
+      <svg
+        x-show="open"
+        x-transition
+        class="w-10 h-10 transition-all duration-300"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
     </button>
+
+    <!-- Mobile Slide-out Menu -->
+    <div
+      x-show="open"
+      x-transition:enter="transition ease-out duration-300 transform"
+      x-transition:enter-start="-translate-y-full"
+      x-transition:enter-end="translate-x-0"
+      x-transition:leave="transition ease-in duration-300 transform"
+      x-transition:leave-start="translate-x-0"
+      x-transition:leave-end="-translate-y-full"
+      class="w-full md:hidden fixed top-0 left-0 pt-10 bg-gray-50 z-30"
+    >
+      <ul
+        class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 space-y-2"
+      >
+        {
+          navItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class={`block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 
+                  text-xl font-OldStandardTT`}
+              >
+                {item.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <!-- Desktop Menu -->
     <div class="items-end justify-between hidden w-full md:flex md:w-auto">
       <ul
         class="flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white"
@@ -68,3 +124,6 @@ const navItems = [
     </div>
   </div>
 </nav>
+
+<!-- Alpine.js CDN (add to your layout/head) -->
+<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
