@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { name, role, email } = Astro.props;
-const image = import(`/src/assets/images/people/${name.split(" ")[0]}.jpg`);
+const image = import(`../assets/images/people/${name.split(" ")[0]}.jpg`);
 ---
 
 <div class="overflow-hidden bg-white">
