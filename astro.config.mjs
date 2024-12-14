@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 
+import icon from "astro-icon";
+
 import react from "@astrojs/react";
 
 import tailwind from "@astrojs/tailwind";
@@ -11,6 +13,9 @@ export default defineConfig({
     react(),
     tailwind({
       applyBaseStyles: false,
+    }),
+    icon({
+      iconDir: "src/assets/icons",
     }),
   ],
 });

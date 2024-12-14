@@ -3,7 +3,32 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Projects">
-  <body>
-    <h1>Projects Section</h1>
-  </body>
+  <section
+    class="px-6 py-10 pt-36 md:px-32 2xl:px-80 relative font-OldStandardTT"
+  >
+    <div class="text-4xl">Projects</div>
+    <div class="w-full">
+      <model-viewer
+        src="/src/assets/models/SHED-REV-AA.glb"
+        ar
+        ar-modes="webxr scene-viewer quick-look"
+        camera-controls
+        tone-mapping="neutral"
+        poster="poster.webp"
+        shadow-intensity="1"
+        exposure="0.50"
+        shadow-softness="1"
+        environment-image="legacy"
+      >
+        <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
+        </div>
+      </model-viewer>
+    </div>
+  </section>
 </Layout>
+
+<script
+  type="module"
+  src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
+></script>

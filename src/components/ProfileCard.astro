@@ -1,14 +1,15 @@
 ---
 import Image from "astro/components/Image.astro";
+import { Icon } from "astro-icon/components";
 
 interface Props {
-  image: ImageMetadata;
   name: string;
   role: string;
   email: string;
 }
 
-const { image, name, role, email } = Astro.props;
+const { name, role, email } = Astro.props;
+const image = import(`/src/assets/images/people/${name.split(" ")[0]}.jpg`);
 ---
 
 <div class="overflow-hidden bg-white">
@@ -16,17 +17,20 @@ const { image, name, role, email } = Astro.props;
     <Image
       src={image}
       alt={`Profile photo of ${name}`}
-      class="object-cover w-44 h-full"
+      class="object-cover w-full h-full"
     />
   </div>
   <div class="p-4 text-center">
-    <h3 class="font-semibold text-lg">{name}</h3>
-    <p class="text-muted-foreground text-sm mb-3">{role}</p>
+    <h3 class="text-xl">{name}</h3>
+    <p class="text-muted-foreground text-base mb-3">{role}</p>
     <a
       href={`mailto:${email}`}
       class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-amber-100 hover:bg-amber-200 transition-colors"
     >
-      <!-- <Mail class="w-4 h-4 text-amber-600" /> -->
+      <Icon
+        name="mail"
+        class="w-4 h-4 text-amber-400 hover:text-amber-500 transition-colors"
+      />
       <span class="sr-only">Email {name}</span>
     </a>
   </div>
