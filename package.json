@@ -22,6 +22,7 @@
     "astro": "5.0.5",
     "astro-icon": "^1.1.4",
     "class-variance-authority": "^0.7.0",
+    "classnames": "^2.5.1",
     "clsx": "^2.1.1",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.468.0",
