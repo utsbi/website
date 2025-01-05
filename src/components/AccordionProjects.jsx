@@ -3,12 +3,23 @@ import * as Accordion from "@radix-ui/react-accordion";
 import classNames from "classnames";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 import "./styles.css";
+import "@google/model-viewer";
 
 const siteViewPath = "/src/assets/images/project-one/site-view/SITE";
 const interiorViewPath =
   "/src/assets/images/project-one/interior-concept/INTERIOR";
 const exteriorViewPath =
   "/src/assets/images/project-one/exterior-concept/EXTERIOR";
+
+console.log(
+  import(`@/assets/images/project-one/exterior-concept/EXTERIOR-1.jpg`).src
+);
+
+const img = import(
+  `@/assets/images/project-one/exterior-concept/EXTERIOR-1.jpg`
+);
+
+console.log(img);
 
 const AccordionProjects = () => (
   <Accordion.Root
@@ -27,7 +38,11 @@ const AccordionProjects = () => (
         plans to integrate eco-friendly features and innovations during the
         building process.
         <div className="py-4">
-          <Accordion.Root className="AccordionRoot" type="multiple" collapsible>
+          <Accordion.Root
+            className="AccordionRoot"
+            type="multiple"
+            collapsible="true"
+          >
             <Accordion.Item className="AccordionItem" value="item-1">
               <AccordionTrigger>Site View Images</AccordionTrigger>
               <AccordionContent>
@@ -121,23 +136,30 @@ const AccordionProjects = () => (
             </Accordion.Item>
           </Accordion.Root>
         </div>
-        <model-viewer
-          src="/models/SHED-REV-AA.glb"
-          ar
-          ar-modes="webxr scene-viewer quick-look"
-          camera-controls
-          tone-mapping="neutral"
-          poster="poster.webp"
-          shadow-intensity="1"
-          exposure="0.50"
-          shadow-softness="1"
-          environment-image="legacy"
-          className="w-full h-96"
-        >
-          <div className="progress-bar hide" slot="progress-bar">
-            <div className="update-bar"></div>
-          </div>
-        </model-viewer>
+        <div className="flex flex-col items-center">
+          <model-viewer
+            src="/models/SHED-REV-AA.glb"
+            skybox-image="/models/spruit_sunrise_4k.jpg"
+            skybox-height="0.06m"
+            shadow-intensity="1"
+            max-camera-orbit="auto 90deg auto"
+            ar
+            camera-controls
+            disable-tap
+            disable-pan
+            auto-rotate
+            ar-modes="webxr scene-viewer quick-look"
+            tone-mapping="neutral"
+            exposure="0.50"
+            shadow-softness="1"
+            environment-image="legacy"
+            alt="A 3D model of a storage-unit-sized housing prototype"
+          >
+            <div className="progress-bar hide" slot="progress-bar">
+              <div className="update-bar"></div>
+            </div>
+          </model-viewer>
+        </div>
         <div className="italic text-center">
           A 3D-rendered model of a storage-unit-sized housing prototype, created
           to optimize space efficiency and a framework to integrate sustainable
