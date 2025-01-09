@@ -147,13 +147,13 @@ const AccordionProjects = () => (
             camera-controls
             disable-tap
             disable-pan
-            auto-rotate
             ar-modes="webxr scene-viewer quick-look"
             tone-mapping="neutral"
             exposure="0.50"
             shadow-softness="1"
             environment-image="legacy"
             alt="A 3D model of a storage-unit-sized housing prototype"
+            style={{ width: "50%", height: "500px" }}
           >
             <div className="progress-bar hide" slot="progress-bar">
               <div className="update-bar"></div>
