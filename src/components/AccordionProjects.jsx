@@ -138,7 +138,7 @@ const AccordionProjects = () => (
         </div>
         <div className="flex flex-col items-center">
           <model-viewer
-            src="/models/SHED-REV-AA.glb"
+            src="/models/compressed_SHED-REV-AA.glb"
             skybox-image="/models/spruit_sunrise_4k.jpg"
             skybox-height="0.06m"
             shadow-intensity="1"
