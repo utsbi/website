@@ -18,6 +18,7 @@ const image = import(`../assets/images/people/${name.split(" ")[0]}.jpg`);
       src={image}
       alt={`Profile photo of ${name}`}
       class="object-cover w-full h-full"
+      loading={"eager"}
     />
   </div>
   <div class="p-4 text-center">

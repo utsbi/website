@@ -13,9 +13,13 @@ import Layout from "../layouts/Layout.astro";
       impact.
     </div>
   </section>
-  <section
-    class="px-6 py-10 pt-36 md:px-32 2xl:px-80 relative font-OldStandardTT"
-  >
-    <div id="map" class="map" style="height: 500px;"></div>
+  <section class="px-6 pb-10 md:px-32 2xl:px-80 relative font-OldStandardTT">
+    <!-- <div id="map" class="map" style="height: 500px;"></div> -->
+    <div class="h-full w-auto">
+      <iframe
+        src="https://www.google.com/maps/d/embed?mid=1ItBSYv-_H_PJBScpnU8gLMzr9F4qA6Q&ehbc=2E312F"
+        width="640"
+        height="480"></iframe>
+    </div>
   </section>
 </Layout>
