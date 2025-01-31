@@ -11,15 +11,35 @@ const interiorViewPath =
 const exteriorViewPath =
   "/src/assets/images/project-one/exterior-concept/EXTERIOR";
 
-console.log(
-  import(`@/assets/images/project-one/exterior-concept/EXTERIOR-1.jpg`).src
-);
+// TODO: Refactor to use a loop to import images
 
-const img = import(
-  `@/assets/images/project-one/exterior-concept/EXTERIOR-1.jpg`
-);
+// SITE VIEW
+import site1 from "/src/assets/images/project-one/site-view/SITE-1.png";
+import site2 from "/src/assets/images/project-one/site-view/SITE-2.png";
+import site3 from "/src/assets/images/project-one/site-view/SITE-3.png";
+import site4 from "/src/assets/images/project-one/site-view/SITE-4.png";
 
-console.log(img);
+// INTERIOR VIEW
+import in1 from "/src/assets/images/project-one/interior-concept/INTERIOR-1.jpg";
+import in2 from "/src/assets/images/project-one/interior-concept/INTERIOR-2.jpg";
+import in3 from "/src/assets/images/project-one/interior-concept/INTERIOR-3.jpg";
+import in4 from "/src/assets/images/project-one/interior-concept/INTERIOR-4.jpg";
+
+// EXTERIOR VIEW
+import ex1 from "/src/assets/images/project-one/exterior-concept/EXTERIOR-1.jpg";
+import ex2 from "/src/assets/images/project-one/exterior-concept/EXTERIOR-2.jpg";
+
+// console.log(
+//   import(`@/assets/images/project-one/exterior-concept/EXTERIOR-1.jpg`).src
+// );
+
+// const image = import(`../assets/images/people/INTERIOR${}.jpg`);
+
+// const img = import(
+//   `@/assets/images/project-one/exterior-concept/EXTERIOR-1.jpg`
+// );
+
+// console.log(img);
 
 const AccordionProjects = () => (
   <Accordion.Root
@@ -48,32 +68,16 @@ const AccordionProjects = () => (
               <AccordionContent>
                 <div className="flex flex-col md:flex-row flex-wrap">
                   <div className="flex-1 basis-1/2">
-                    <img
-                      src={`${siteViewPath}-1.png`}
-                      alt="Site View 1"
-                      className="w-full"
-                    />
+                    <img src={site1.src} alt="Site View 1" className="w-full" />
                   </div>
                   <div className="flex-1 basis-1/2">
-                    <img
-                      src={`${siteViewPath}-2.png`}
-                      alt="Site View 2"
-                      className="w-full"
-                    />
+                    <img src={site2.src} alt="Site View 2" className="w-full" />
                   </div>
                   <div className="flex-1 basis-1/2">
-                    <img
-                      src={`${siteViewPath}-3.png`}
-                      alt="Site View 3"
-                      className="w-full"
-                    />
+                    <img src={site3.src} alt="Site View 3" className="w-full" />
                   </div>
                   <div className="flex-1 basis-1/2">
-                    <img
-                      src={`${siteViewPath}-4.png`}
-                      alt="Site View 4"
-                      className="w-full"
-                    />
+                    <img src={site4.src} alt="Site View 4" className="w-full" />
                   </div>
                 </div>
               </AccordionContent>
@@ -84,14 +88,14 @@ const AccordionProjects = () => (
                 <div className="flex flex-col md:flex-row">
                   <div className="flex-1 basis-1/2">
                     <img
-                      src={`${exteriorViewPath}-1.jpg`}
+                      src={ex1.src}
                       alt="Exterior Concept 1"
                       className="w-full"
                     />
                   </div>
                   <div className="flex-1 basis-1/2">
                     <img
-                      src={`${exteriorViewPath}-2.jpg`}
+                      src={ex2.src}
                       alt="Exterior Concept 2"
                       className="w-full"
                     />
@@ -105,28 +109,28 @@ const AccordionProjects = () => (
                 <div className="flex flex-col md:flex-row flex-wrap">
                   <div className="flex-1 basis-1/2">
                     <img
-                      src={`${interiorViewPath}-1.jpg`}
+                      src={in1.src}
                       alt="Interior Concept 1"
                       className="w-full"
                     />
                   </div>
                   <div className="flex-1 basis-1/2">
                     <img
-                      src={`${interiorViewPath}-2.jpg`}
+                      src={in2.src}
                       alt="Interior Concept 2"
                       className="w-full"
                     />
                   </div>
                   <div className="flex-1 basis-1/2">
                     <img
-                      src={`${interiorViewPath}-3.jpg`}
+                      src={in3.src}
                       alt="Interior Concept 3"
                       className="w-full"
                     />
                   </div>
                   <div className="flex-1 basis-1/2">
                     <img
-                      src={`${interiorViewPath}-4.jpg`}
+                      src={in4.src}
                       alt="Interior Concept 4"
                       className="w-full"
                     />
@@ -137,30 +141,32 @@ const AccordionProjects = () => (
           </Accordion.Root>
         </div>
         <div className="flex flex-col items-center">
-          <model-viewer
-            src="/models/compressed_SHED-REV-AA.glb"
-            skybox-image="/models/spruit_sunrise_4k.jpg"
-            skybox-height="0.06m"
-            shadow-intensity="1"
-            max-camera-orbit="auto 90deg auto"
-            ar
-            camera-controls
-            disable-tap
-            disable-pan
-            ar-modes="webxr scene-viewer quick-look"
-            tone-mapping="neutral"
-            exposure="0.50"
-            shadow-softness="1"
-            environment-image="legacy"
-            alt="A 3D model of a storage-unit-sized housing prototype"
-            style={{ width: "50%", height: "500px" }}
-          >
-            <div className="progress-bar hide" slot="progress-bar">
-              <div className="update-bar"></div>
-            </div>
-          </model-viewer>
+          <div className="relative w-full rounded overflow-hidden">
+            <model-viewer
+              src="/models/compressed_SHED-REV-AA.glb"
+              skybox-image="/models/spruit_sunrise_4k.jpg"
+              skybox-height="0.06m"
+              shadow-intensity="1"
+              max-camera-orbit="auto 90deg auto"
+              ar
+              camera-controls
+              disable-tap
+              disable-pan
+              ar-modes="webxr scene-viewer quick-look"
+              tone-mapping="neutral"
+              exposure="0.50"
+              shadow-softness="1"
+              environment-image="legacy"
+              alt="A 3D model of a storage-unit-sized housing prototype"
+              style={{ width: "100%", height: "300px" }}
+            >
+              <div className="progress-bar hide" slot="progress-bar">
+                <div className="update-bar"></div>
+              </div>
+            </model-viewer>
+          </div>
         </div>
-        <div className="italic text-center">
+        <div className="italic text-center pt-4">
           A 3D-rendered model of a storage-unit-sized housing prototype, created
           to optimize space efficiency and a framework to integrate sustainable
           technologies
