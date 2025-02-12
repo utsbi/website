@@ -1,5 +1,6 @@
 ---
-import logo from "@/assets/logos/logo.png";
+import logo from "@/assets/logos/logo_v2.png";
+import logoAnimation from "@/assets/logos/logo_animation.mp4";
 import Image from "astro/components/Image.astro";
 
 const navItems = [
@@ -20,12 +21,15 @@ const navItems = [
     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3"
   >
     <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <Image
-        src={logo}
-        loading={"eager"}
-        class="h-14 w-14 md:h-16 md:w-16"
-        alt="SBI Logo"
-      />
+      <!-- <Image
+      src={logo}
+      loading={"eager"}
+      class="h-14 w-14 md:h-16 md:w-16"
+      alt="SBI Logo"
+    /> -->
+      <video autoplay muted playsinline class="h-14 w-14 md:h-16 md:w-16">
+        <source src={logoAnimation} type="video/webm" />
+      </video>
     </a>
 
     <button

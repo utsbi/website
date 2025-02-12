@@ -2,13 +2,18 @@
 import "@/styles/globals.css";
 import Navbar from "@/components/Navbar.astro";
 import Footer from "@/components/Footer.astro";
-import favicon from "@/assets/logos/logo-transparent.png";
+import favicon from "@/assets/logos/logo_v2_transparent.png";
+import faviconLight from "@/assets/logos/logo_v2_transparent_light.png";
 
 import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title: string;
 }
+const darkMode =
+  typeof window !== "undefined"
+    ? window.localStorage.getItem("darkMode") === "true"
+    : false;
 
 const { title } = Astro.props;
 ---
@@ -19,10 +24,34 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Offical UTSBI website: Research Driven, Professionally Inspired, and Student Powered."
+      content="Official UTSBI website: Research Driven, Professionally Inspired, and Student Powered."
+    />
+
+    <!-- SEO -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://utsbi.org" />
+    <meta
+      property="og:title"
+      content="Official UTSBI Website | Research Driven, Professionally Inspired, and Student Powered"
+    />
+    <meta
+      property="og:description"
+      content="Discover the innovative research and professional inspiration behind UTSBI. Student-powered solutions for a better tomorrow."
+    />
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://your-utsbi-site.com" />
+    <!-- Keywords -->
+    <meta
+      name="keywords"
+      content="Research, Innovation, Education, Student Organization, UTSBI"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/png" href={favicon.src} />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href={darkMode ? faviconLight.src : favicon.src}
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ClientRouter />
