@@ -6,12 +6,71 @@ import Layout from "../layouts/Layout.astro";
   <section
     class="px-6 py-10 pt-36 md:px-32 2xl:px-80 relative font-OldStandardTT"
   >
-    <div class="text-4xl">Contact Us</div>
-    <div class="text-xl pt-10 space-y-6">
-      <div>
-        If you have any questions or inquiries, please email
-        <a href="mailto:px.guzman@utexas.edu" class="font-bold">Pedro Guzman</a>
-        or <a href="mailto:sammoran@utexas.edu" class="font-bold">Sam Moran</a>.
+    <div class="text-4xl mb-6">Contact Us</div>
+    <div class="text-xl mb-10">
+      Have a question or want to collaborate with us on a project? Fill out the
+      form below and we'll get back to you.
+    </div>
+
+    <div class="max-w-2xl mx-auto">
+      <form name="contact" method="POST" data-netlify="true">
+        <div class="flex flex-col md:flex-row gap-6 mb-6">
+          <div class="form-group flex-1 w-full max-w-full">
+            <label for="name" class="block text-lg mb-2">Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              class="w-full px-4 py-3 border-2 border-solid border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 box-border transition duration-200"
+            />
+          </div>
+
+          <div class="form-group flex-1 w-full max-w-full">
+            <label for="email" class="block text-lg mb-2">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required
+              class="w-full px-4 py-3 border-2 border-solid border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 box-border transition duration-200"
+            />
+          </div>
+        </div>
+
+        <div class="form-group w-full max-w-full">
+          <label for="message" class="block text-lg mb-2">Message</label>
+          <textarea
+            name="message"
+            id="message"
+            rows="6"
+            required
+            class="w-full px-4 py-3 border-2 border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 box-border transition duration-200"
+          ></textarea>
+        </div>
+
+        <div class="flex justify-start mt-6">
+          <button
+            type="submit"
+            class="bg-green-500 hover:bg-green-600 text-white transition duration-300 pt-3 pb-2 px-6 border border-green-500 hover:border-green-500 rounded"
+          >
+            Send Message
+          </button>
+        </div>
+      </form>
+      <div class="mt-6 text-xl">
+        <div>Prefer to reach out directly?</div>
+        <div>
+          Contact our presidents:
+          <a
+            href="mailto:px.guzman@utexas.edu"
+            class="text-green-500 hover:underline font-semibold">Pedro Guzman</a
+          > or
+          <a
+            href="mailto:sammoran@utexas.edu"
+            class="text-green-500 hover:underline font-semibold">Sam Moran</a
+          >
+        </div>
       </div>
     </div>
   </section>
