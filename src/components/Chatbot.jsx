@@ -48,7 +48,7 @@ const Chatbot = () => {
     setMessages(newMessagesWithAI);
 
     try {
-      const ollama = new Ollama({ host: "http://galileo:11434" });
+      const ollama = new Ollama({ host: "http://localhost:11434" });
       const chatHistory = [
         { role: "system", content: initialSystemPrompt },
         ...newMessages,

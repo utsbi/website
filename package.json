@@ -23,6 +23,7 @@
     "@types/react-dom": "^18.3.5",
     "astro": "5.1.8",
     "astro-icon": "^1.1.5",
+    "caniuse-lite": "^1.0.30001712",
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
