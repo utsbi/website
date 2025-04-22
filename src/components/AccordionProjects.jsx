@@ -14,20 +14,20 @@ const exteriorViewPath =
 // TODO: Refactor to use a loop to import images
 
 // SITE VIEW
-import site1 from "/src/assets/images/project-one/site-view/SITE-1.png";
-import site2 from "/src/assets/images/project-one/site-view/SITE-2.png";
-import site3 from "/src/assets/images/project-one/site-view/SITE-3.png";
-import site4 from "/src/assets/images/project-one/site-view/SITE-4.png";
+import site1 from "/src/assets/images/project-one/site-view/SITE-1.webp";
+import site2 from "/src/assets/images/project-one/site-view/SITE-2.webp";
+import site3 from "/src/assets/images/project-one/site-view/SITE-3.webp";
+import site4 from "/src/assets/images/project-one/site-view/SITE-4.webp";
 
 // INTERIOR VIEW
-import in1 from "/src/assets/images/project-one/interior-concept/INTERIOR-1.jpg";
-import in2 from "/src/assets/images/project-one/interior-concept/INTERIOR-2.jpg";
-import in3 from "/src/assets/images/project-one/interior-concept/INTERIOR-3.jpg";
-import in4 from "/src/assets/images/project-one/interior-concept/INTERIOR-4.jpg";
+import in1 from "/src/assets/images/project-one/interior-concept/INTERIOR-1.webp";
+import in2 from "/src/assets/images/project-one/interior-concept/INTERIOR-2.webp";
+import in3 from "/src/assets/images/project-one/interior-concept/INTERIOR-3.webp";
+import in4 from "/src/assets/images/project-one/interior-concept/INTERIOR-4.webp";
 
 // EXTERIOR VIEW
-import ex1 from "/src/assets/images/project-one/exterior-concept/EXTERIOR-1.jpg";
-import ex2 from "/src/assets/images/project-one/exterior-concept/EXTERIOR-2.jpg";
+import ex1 from "/src/assets/images/project-one/exterior-concept/EXTERIOR-1.webp";
+import ex2 from "/src/assets/images/project-one/exterior-concept/EXTERIOR-2.webp";
 
 // console.log(
 //   import(`@/assets/images/project-one/exterior-concept/EXTERIOR-1.jpg`).src
