@@ -3,13 +3,8 @@ import * as Accordion from "@radix-ui/react-accordion";
 import classNames from "classnames";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 import "./styles.css";
-import "@google/model-viewer";
-
-const siteViewPath = "/src/assets/images/project-one/site-view/SITE";
-const interiorViewPath =
-  "/src/assets/images/project-one/interior-concept/INTERIOR";
-const exteriorViewPath =
-  "/src/assets/images/project-one/exterior-concept/EXTERIOR";
+import ModelViewer from "./ModelViewer.jsx";
+import TestViewer from "./R3FViewer.jsx";
 
 // TODO: Refactor to use a loop to import images
 
@@ -29,17 +24,15 @@ import in4 from "/src/assets/images/project-one/interior-concept/INTERIOR-4.webp
 import ex1 from "/src/assets/images/project-one/exterior-concept/EXTERIOR-1.webp";
 import ex2 from "/src/assets/images/project-one/exterior-concept/EXTERIOR-2.webp";
 
-// console.log(
-//   import(`@/assets/images/project-one/exterior-concept/EXTERIOR-1.jpg`).src
-// );
+import pi1 from "/src/assets/images/project-two/interior-concept/1.webp";
+import pi2 from "/src/assets/images/project-two/interior-concept/2.webp";
+import pi3 from "/src/assets/images/project-two/interior-concept/3.webp";
+import pi4 from "/src/assets/images/project-two/interior-concept/4.webp";
 
-// const image = import(`../assets/images/people/INTERIOR${}.jpg`);
-
-// const img = import(
-//   `@/assets/images/project-one/exterior-concept/EXTERIOR-1.jpg`
-// );
-
-// console.log(img);
+import pe1 from "/src/assets/images/project-two/exterior-concept/1.webp";
+import pe2 from "/src/assets/images/project-two/exterior-concept/2.webp";
+import pe3 from "/src/assets/images/project-two/exterior-concept/3.webp";
+import pe4 from "/src/assets/images/project-two/exterior-concept/4.webp";
 
 const AccordionProjects = () => (
   <Accordion.Root
@@ -141,30 +134,11 @@ const AccordionProjects = () => (
           </Accordion.Root>
         </div>
         <div className="flex flex-col items-center">
-          <div className="relative w-full rounded overflow-hidden">
-            <model-viewer
-              src="/models/compressed_SHED-REV-AA.glb"
-              skybox-image="/models/spruit_sunrise_4k.jpg"
-              skybox-height="0.06m"
-              shadow-intensity="1"
-              max-camera-orbit="auto 90deg auto"
-              ar
-              camera-controls
-              disable-tap
-              disable-pan
-              ar-modes="webxr scene-viewer quick-look"
-              tone-mapping="neutral"
-              exposure="0.50"
-              shadow-softness="1"
-              environment-image="legacy"
-              alt="A 3D model of a storage-unit-sized housing prototype"
-              style={{ width: "100%", height: "300px" }}
-            >
-              <div className="progress-bar hide" slot="progress-bar">
-                <div className="update-bar"></div>
-              </div>
-            </model-viewer>
-          </div>
+          <ModelViewer
+            modelSrc="/models/compressed_SHED-REV-AA.glb"
+            skyboxImage="/models/spruit_sunrise_4k.jpg"
+            alt="A 3D model of a storage-unit-sized housing prototype"
+          />
         </div>
         <div className="italic text-center pt-4">
           A 3D-rendered model of a storage-unit-sized housing prototype, created
@@ -174,10 +148,95 @@ const AccordionProjects = () => (
       </AccordionContent>
     </Accordion.Item>
 
-    <Accordion.Item className="AccordionItem" value="item-2" disabled>
-      <AccordionTrigger className="italic text-xl">
-        Upcoming - Sustainable Family Home Project
+    <Accordion.Item className="AccordionItem" value="item-2">
+      <AccordionTrigger className="text-xl">
+        Sustainable Family Home Project
       </AccordionTrigger>
+      <AccordionContent>
+        {/* // description */}
+        <div className="py-4">
+          <Accordion.Root
+            className="AccordionRoot"
+            type="multiple"
+            collapsible="true"
+          >
+            <Accordion.Item className="AccordionItem" value="item-1">
+              <AccordionTrigger>Exterior Concept Images</AccordionTrigger>
+              <AccordionContent>
+                <div className="flex flex-col md:flex-row flex-wrap">
+                  <div className="flex-1 basis-1/2">
+                    <img
+                      src={pe1.src}
+                      alt="Exterior Concept 1"
+                      className="w-full"
+                    />
+                  </div>
+                  <div className="flex-1 basis-1/2">
+                    <img
+                      src={pe2.src}
+                      alt="Exterior Concept 2"
+                      className="w-full"
+                    />
+                  </div>
+                  <div className="flex-1 basis-1/2">
+                    <img
+                      src={pe3.src}
+                      alt="Exterior Concept 3"
+                      className="w-full"
+                    />
+                  </div>
+                  <div className="flex-1 basis-1/2">
+                    <img
+                      src={pe4.src}
+                      alt="Exterior Concept 4"
+                      className="w-full"
+                    />
+                  </div>
+                </div>
+              </AccordionContent>
+            </Accordion.Item>
+            <Accordion.Item className="AccordionItem" value="item-2">
+              <AccordionTrigger>Interior Concept Images</AccordionTrigger>
+              <AccordionContent>
+                <div className="flex flex-col md:flex-row flex-wrap">
+                  <div className="flex-1 basis-1/2">
+                    <img
+                      src={pi1.src}
+                      alt="Interior Concept 1"
+                      className="w-full"
+                    />
+                  </div>
+                  <div className="flex-1 basis-1/2">
+                    <img
+                      src={pi2.src}
+                      alt="Interior Concept 2"
+                      className="w-full"
+                    />
+                  </div>
+                  <div className="flex-1 basis-1/2">
+                    <img
+                      src={pi3.src}
+                      alt="Interior Concept 3"
+                      className="w-full"
+                    />
+                  </div>
+                  <div className="flex-1 basis-1/2">
+                    <img
+                      src={pi4.src}
+                      alt="Interior Concept 4"
+                      className="w-full"
+                    />
+                  </div>
+                </div>
+              </AccordionContent>
+            </Accordion.Item>
+          </Accordion.Root>
+        </div>
+        <div className="flex flex-col items-center">
+          <TestViewer />
+        </div>
+        {/* <div className="italic text-center pt-4">// caption</div> */}
+      </AccordionContent>
     </Accordion.Item>
   </Accordion.Root>
 );
@@ -211,10 +270,5 @@ const AccordionContent = React.forwardRef(
     </Accordion.Content>
   )
 );
-
-<script
-  type="module"
-  src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
-></script>;
 
 export default AccordionProjects;
