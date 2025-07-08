@@ -26,7 +26,7 @@
     "@types/three": "^0.176.0",
     "astro": "5.1.8",
     "astro-icon": "^1.1.5",
-    "caniuse-lite": "^1.0.30001715",
+    "caniuse-lite": "^1.0.30001727",
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",

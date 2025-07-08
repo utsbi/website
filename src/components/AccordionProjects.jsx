@@ -135,7 +135,7 @@ const AccordionProjects = () => (
         </div>
         <div className="flex flex-col items-center">
           <ModelViewer
-            modelSrc="/models/compressed_SHED-REV-AA.glb"
+            modelSrc="/models/hobbie_farm.glb"
             skyboxImage="/models/spruit_sunrise_4k.jpg"
             alt="A 3D model of a storage-unit-sized housing prototype"
           />
@@ -256,7 +256,7 @@ const AccordionTrigger = React.forwardRef(
         />
       </Accordion.Trigger>
     </Accordion.Header>
-  )
+  ),
 );
 
 const AccordionContent = React.forwardRef(
@@ -268,7 +268,7 @@ const AccordionContent = React.forwardRef(
     >
       <div className="AccordionContentText">{children}</div>
     </Accordion.Content>
-  )
+  ),
 );
 
 export default AccordionProjects;

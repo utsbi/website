@@ -11,7 +11,7 @@ import {
 } from "@react-three/drei";
 import * as THREE from "three";
 
-const MODEL = "/models/bundled-transformed.glb";
+const MODEL = "/models/family_home.glb";
 const HDRI = "/models/spruit_sunrise_4k.jpg";
 
 // Camera controller component to handle camera switching
@@ -50,7 +50,7 @@ const CameraSelector = ({ activeCameraIndex, houseRef, cameraControlsRef }) => {
             target.x,
             target.y,
             target.z,
-            true
+            true,
           );
         } else {
           // Direct camera manipulation if no controls available
@@ -346,7 +346,7 @@ export default function TestViewer() {
         target[0],
         target[1],
         target[2],
-        true
+        true,
       );
     }
   };
