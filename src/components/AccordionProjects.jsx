@@ -38,9 +38,99 @@ const AccordionProjects = () => (
   <Accordion.Root
     className="AccordionRoot"
     type="single"
-    defaultValue="item-1"
+    defaultValue="item-2"
     collapsible
   >
+    <Accordion.Item className="AccordionItem" value="item-2">
+      <AccordionTrigger className="text-xl">
+        Sustainable Family Home Project
+      </AccordionTrigger>
+      <AccordionContent>
+        {/* // description */}
+        <div className="py-4">
+          <Accordion.Root
+            className="AccordionRoot"
+            type="multiple"
+            collapsible="true"
+          >
+            <Accordion.Item className="AccordionItem" value="item-1">
+              <AccordionTrigger>Exterior Concept Images</AccordionTrigger>
+              <AccordionContent>
+                <div className="flex flex-col md:flex-row flex-wrap">
+                  <div className="flex-1 basis-1/2">
+                    <img
+                      src={pe1.src}
+                      alt="Exterior Concept 1"
+                      className="w-full"
+                    />
+                  </div>
+                  <div className="flex-1 basis-1/2">
+                    <img
+                      src={pe2.src}
+                      alt="Exterior Concept 2"
+                      className="w-full"
+                    />
+                  </div>
+                  <div className="flex-1 basis-1/2">
+                    <img
+                      src={pe3.src}
+                      alt="Exterior Concept 3"
+                      className="w-full"
+                    />
+                  </div>
+                  <div className="flex-1 basis-1/2">
+                    <img
+                      src={pe4.src}
+                      alt="Exterior Concept 4"
+                      className="w-full"
+                    />
+                  </div>
+                </div>
+              </AccordionContent>
+            </Accordion.Item>
+            <Accordion.Item className="AccordionItem" value="item-2">
+              <AccordionTrigger>Interior Concept Images</AccordionTrigger>
+              <AccordionContent>
+                <div className="flex flex-col md:flex-row flex-wrap">
+                  <div className="flex-1 basis-1/2">
+                    <img
+                      src={pi1.src}
+                      alt="Interior Concept 1"
+                      className="w-full"
+                    />
+                  </div>
+                  <div className="flex-1 basis-1/2">
+                    <img
+                      src={pi2.src}
+                      alt="Interior Concept 2"
+                      className="w-full"
+                    />
+                  </div>
+                  <div className="flex-1 basis-1/2">
+                    <img
+                      src={pi3.src}
+                      alt="Interior Concept 3"
+                      className="w-full"
+                    />
+                  </div>
+                  <div className="flex-1 basis-1/2">
+                    <img
+                      src={pi4.src}
+                      alt="Interior Concept 4"
+                      className="w-full"
+                    />
+                  </div>
+                </div>
+              </AccordionContent>
+            </Accordion.Item>
+          </Accordion.Root>
+        </div>
+        <div className="flex flex-col items-center">
+          <TestViewer />
+        </div>
+        {/* <div className="italic text-center pt-4">// caption</div> */}
+      </AccordionContent>
+    </Accordion.Item>
     <Accordion.Item className="AccordionItem" value="item-1">
       <AccordionTrigger className="text-xl">
         Hobbie Farm Project
@@ -145,97 +235,6 @@ const AccordionProjects = () => (
           to optimize space efficiency and a framework to integrate sustainable
           technologies
         </div>
-      </AccordionContent>
-    </Accordion.Item>
-
-    <Accordion.Item className="AccordionItem" value="item-2">
-      <AccordionTrigger className="text-xl">
-        Sustainable Family Home Project
-      </AccordionTrigger>
-      <AccordionContent>
-        {/* // description */}
-        <div className="py-4">
-          <Accordion.Root
-            className="AccordionRoot"
-            type="multiple"
-            collapsible="true"
-          >
-            <Accordion.Item className="AccordionItem" value="item-1">
-              <AccordionTrigger>Exterior Concept Images</AccordionTrigger>
-              <AccordionContent>
-                <div className="flex flex-col md:flex-row flex-wrap">
-                  <div className="flex-1 basis-1/2">
-                    <img
-                      src={pe1.src}
-                      alt="Exterior Concept 1"
-                      className="w-full"
-                    />
-                  </div>
-                  <div className="flex-1 basis-1/2">
-                    <img
-                      src={pe2.src}
-                      alt="Exterior Concept 2"
-                      className="w-full"
-                    />
-                  </div>
-                  <div className="flex-1 basis-1/2">
-                    <img
-                      src={pe3.src}
-                      alt="Exterior Concept 3"
-                      className="w-full"
-                    />
-                  </div>
-                  <div className="flex-1 basis-1/2">
-                    <img
-                      src={pe4.src}
-                      alt="Exterior Concept 4"
-                      className="w-full"
-                    />
-                  </div>
-                </div>
-              </AccordionContent>
-            </Accordion.Item>
-            <Accordion.Item className="AccordionItem" value="item-2">
-              <AccordionTrigger>Interior Concept Images</AccordionTrigger>
-              <AccordionContent>
-                <div className="flex flex-col md:flex-row flex-wrap">
-                  <div className="flex-1 basis-1/2">
-                    <img
-                      src={pi1.src}
-                      alt="Interior Concept 1"
-                      className="w-full"
-                    />
-                  </div>
-                  <div className="flex-1 basis-1/2">
-                    <img
-                      src={pi2.src}
-                      alt="Interior Concept 2"
-                      className="w-full"
-                    />
-                  </div>
-                  <div className="flex-1 basis-1/2">
-                    <img
-                      src={pi3.src}
-                      alt="Interior Concept 3"
-                      className="w-full"
-                    />
-                  </div>
-                  <div className="flex-1 basis-1/2">
-                    <img
-                      src={pi4.src}
-                      alt="Interior Concept 4"
-                      className="w-full"
-                    />
-                  </div>
-                </div>
-              </AccordionContent>
-            </Accordion.Item>
-          </Accordion.Root>
-        </div>
-        <div className="flex flex-col items-center">
-          <TestViewer />
-        </div>
-        {/* <div className="italic text-center pt-4">// caption</div> */}
       </AccordionContent>
     </Accordion.Item>
   </Accordion.Root>
