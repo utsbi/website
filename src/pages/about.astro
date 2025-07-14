@@ -3,14 +3,16 @@ import Layout from "../layouts/Layout.astro";
 import Image from "astro/components/Image.astro";
 import ProfileCard from "@/components/ProfileCard.astro";
 
-import Rice from "@/assets/images/schools/rice_university.png";
 import UTAustin from "@/assets/images/schools/TEXAS_official_seal.svg";
-import ICOL from "@/assets/images/schools/imperial_college_of_london.png";
+import TAMU from "@/assets/images/schools/TAMU.png";
+import Rice from "@/assets/images/schools/rice_university.png";
+// import ICOL from "@/assets/images/schools/imperial_college_of_london.png";
 
 const images = [
-  { img: Rice, href: "https://www.rice.edu/" },
   { img: UTAustin, href: "https://utexas.edu" },
-  { img: ICOL, href: "https://www.imperial.ac.uk/" },
+  { img: TAMU, href: "https://tamu.edu" },
+  { img: Rice, href: "https://www.rice.edu/" },
+  // { img: ICOL, href: "https://www.imperial.ac.uk/" },
 ];
 
 const people = [
@@ -18,29 +20,37 @@ const people = [
   { name: "Sam Moran", role: "Vice President", email: "sam@utsbi.org" },
   {
     name: "Brendan Lyon",
-    role: "Engineering Director",
+    role: "Director of Mechanical Systems",
     email: "brendanlyon@utexas.edu",
   },
-  { name: "Enoch Zhu", role: "Tech Director", email: "enoch@utsbi.org" },
+  {
+    name: "Enoch Zhu",
+    role: "Director of External Technologies",
+    email: "enoch@utsbi.org",
+  },
   {
     name: "Daniel Lam",
-    role: "Tech Co-Director",
+    role: "Director of Internal Technologies",
     email: "daniel@utsbi.org",
   },
   {
     name: "Dev Shroff",
-    role: "R&D Director",
+    role: "Director of Research and Development",
     email: "dev@utsbi.org",
   },
-  { name: "Ali Akbar", role: "Finance Director", email: "aliakbar@utexas.edu" },
+  {
+    name: "Ali Akbar",
+    role: "Director of Finance",
+    email: "aliakbar@utexas.edu",
+  },
   {
     name: "Kabir Muzumdar",
-    role: "Engineering Director",
+    role: "Director of Civil Systems",
     email: "kabir@utsbi.org",
   },
   {
     name: "Noah Dao",
-    role: "Public Relations Director",
+    role: "Director of Public Relations",
     email: "ntd534@my.utexas.edu",
   },
 ];
@@ -78,10 +88,9 @@ const people = [
         </div>
         <div>
           Become a part of our <span class="font-semibold">wide network</span> stretching
-          from The University of Texas at Austin, Texas A&M, Imperial College of
-          London, and Rice University to gain invaluable skills and be part of a
-          mission-driven team that wishes to help shape a more sustainable future
-          in housing.
+          from The University of Texas at Austin, Texas A&M, and Rice University
+          to gain invaluable skills and be part of a mission-driven team that wishes
+          to help shape a more sustainable future in housing.
         </div>
       </div>
     </div>

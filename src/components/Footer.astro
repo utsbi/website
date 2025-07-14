@@ -1,5 +1,19 @@
 ---
 const currentYear = new Date().getFullYear();
+const socials = [
+  {
+    name: "Instgram",
+    link: "https://instgram.com/ut.sbi",
+  },
+  {
+    name: "LinkedIn",
+    link: "https://linkedin.com/company/utsbi",
+  },
+  {
+    name: "GitHub",
+    link: "https://github.com/utsbi",
+  },
+];
 ---
 
 <footer
@@ -16,22 +30,18 @@ const currentYear = new Date().getFullYear();
         </p>
       </div>
       <div class="pl-3 flex space-x-4">
-        <a
-          href="https://instagram.com/ut.sbi"
-          aria-label="Instagram"
-          class="text-gray-800 hover:underline"
-          target="_blank"
-        >
-          Instagram
-        </a>
-        <a
-          href="https://www.linkedin.com/company/utsbi/"
-          aria-label="LinkedIn"
-          class="text-gray-800 hover:underline"
-          target="_blank"
-        >
-          LinkedIn
-        </a>
+        {
+          socials.map((social) => (
+            <a
+              href={social.link}
+              aria-label={social.name}
+              class="text-gray-800 hover:underline"
+              target="_blank"
+            >
+              {social.name}
+            </a>
+          ))
+        }
       </div>
     </div>
   </div>
