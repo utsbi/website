@@ -48,6 +48,10 @@ const AccordionProjects = () => (
       <AccordionContent>
         {/* // description */}
         <div className="py-4">
+          A modern farmhouse concept designed for sustainable family living.
+          This 2-bedroom, 2-bathroom home features a spacious layout, including
+          a large garage and patio, that thoughtfully integrates classic design
+          with modern, eco-friendly efficiencies and materials.
           <Accordion.Root
             className="AccordionRoot"
             type="multiple"
