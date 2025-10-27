@@ -1,3 +1,5 @@
+## This repository is no longer being used. Please visit the new website repository at [utsbi/portal](https://github.com/utsbi/portal)
+
 # Official UTSBI Website
 
 ## 🚀 Project Structure
